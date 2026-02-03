@@ -34,7 +34,7 @@
   .nav-container {
     max-width: 1100px;
     margin: auto;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem 1rem 0.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,12 +46,27 @@
     color: var(--accent);
   }
 
+  /* push logo further left, away from nav links */
+  .logo {
+    margin-right: 4.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
   .nav-links a {
-    margin-left: 1.5rem;
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
     position: relative;
+    padding: 0.35rem 0.5rem;
+    white-space: nowrap;
   }
 
   .nav-links a::after {
@@ -85,6 +100,68 @@
 
   .hero span {
     color: var(--accent);
+  }
+
+  /* AQUIGA per-letter tooltip */
+  .here {
+    font-size: 4.2rem;
+    letter-spacing: 0.08em;
+    display: block;
+    margin: 0.2rem auto 0.6rem;
+    text-align: center;
+  }
+
+  .here .letter {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.12rem;
+    cursor: default;
+    color: var(--text);
+    transition: transform 0.12s ease;
+  }
+
+  .here .letter:hover {
+    transform: translateY(-6%);
+  }
+
+  .here .letter::after {
+    content: attr(data-meaning);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #000;
+    color: #fff;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 200;
+  }
+
+  .here .letter:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .here {
+      font-size: 2.6rem;
+    }
+    .here .letter::after {
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      font-size: 0.9rem;
+      padding: 0.35rem 0.6rem;
+    }
+    .here .letter:hover::after {
+      transform: translateX(-50%) translateY(0);
+    }
   }
 
   .hero p {
@@ -122,6 +199,13 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+  }
+
   .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
@@ -151,5 +235,23 @@
 
     .nav-links a {
       margin-left: 1rem;
+    }
+  }
+
+  /* Keep nav links inline on mobile: allow horizontal scroll instead of stacking */
+  @media (max-width: 760px) {
+    .nav-links {
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-links a {
+      flex: 0 0 auto;
+      padding: 0.45rem 0.6rem;
+      white-space: nowrap;
+    }
+    .nav-links a::after {
+      /* keep underline behavior on hover */
     }
   }
