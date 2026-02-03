@@ -135,6 +135,351 @@ class NuclearParticleEffect {
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
+
+            .fusion-container {
+                position: absolute;
+                left: 5%;
+                top: 30%;
+                width: 200px;
+                height: 200px;
+                pointer-events: none;
+                transform: scale(var(--scale, 1));
+            }
+
+            .fusion-particle {
+                position: absolute;
+                border-radius: 50%;
+                box-shadow: 0 0 15px currentColor;
+                animation-timing-function: ease-in-out;
+            }
+
+            .fusion-particle-a {
+                width: 8px;
+                height: 8px;
+                background: #38bdf8;
+                color: #38bdf8;
+                left: 10px;
+                top: 85px;
+                animation: fusionWave1 8s ease-in-out infinite;
+            }
+
+            .fusion-particle-b {
+                width: 10px;
+                height: 10px;
+                background: #0ea5e9;
+                color: #0ea5e9;
+                right: 15px;
+                top: 80px;
+                animation: fusionWave1 8s ease-in-out infinite;
+                animation-delay: 1s;
+            }
+
+            .fusion-particle-c {
+                width: 6px;
+                height: 6px;
+                background: #0284c7;
+                color: #0284c7;
+                left: 20px;
+                bottom: 20px;
+                animation: fusionWave2 8s ease-in-out infinite;
+                animation-delay: 2s;
+            }
+
+            .fusion-particle-d {
+                width: 9px;
+                height: 9px;
+                background: #1e40af;
+                color: #1e40af;
+                right: 10px;
+                bottom: 25px;
+                animation: fusionWave2 8s ease-in-out infinite;
+                animation-delay: 3s;
+            }
+
+            .fusion-core {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background: radial-gradient(circle, #3b82f6, #1e40af);
+                border-radius: 50%;
+                left: 92px;
+                top: 92px;
+                box-shadow: 0 0 20px #3b82f6;
+                animation: fusionCore 8s ease-in-out infinite;
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            @keyframes fusionWave1 {
+                0% {
+                    transform: translateX(0) translateY(0) scale(1);
+                    opacity: 0.8;
+                }
+                5% {
+                    transform: translateX(7px) translateY(-2px) scale(1.05);
+                    opacity: 0.9;
+                }
+                10% {
+                    transform: translateX(15px) translateY(-5px) scale(1.1);
+                    opacity: 1;
+                }
+                15% {
+                    transform: translateX(23px) translateY(-4px) scale(1.15);
+                    opacity: 1;
+                }
+                20% {
+                    transform: translateX(35px) translateY(-2px) scale(1.2);
+                    opacity: 1;
+                }
+                25% {
+                    transform: translateX(45px) translateY(0px) scale(1.18);
+                    opacity: 0.95;
+                }
+                30% {
+                    transform: translateX(55px) translateY(3px) scale(1.1);
+                    opacity: 0.9;
+                }
+                35% {
+                    transform: translateX(63px) translateY(5px) scale(1.05);
+                    opacity: 0.8;
+                }
+                40% {
+                    transform: translateX(75px) translateY(8px) scale(1);
+                    opacity: 0.7;
+                }
+                45% {
+                    transform: translateX(80px) translateY(9px) scale(0.9);
+                    opacity: 0.5;
+                }
+                50% {
+                    transform: translateX(85px) translateY(10px) scale(0.8);
+                    opacity: 0.3;
+                }
+                55% {
+                    transform: translateX(85px) translateY(10px) scale(0.8);
+                    opacity: 0.3;
+                }
+                60% {
+                    transform: translateX(85px) translateY(10px) scale(0.8);
+                    opacity: 0.3;
+                }
+                65% {
+                    transform: translateX(80px) translateY(9px) scale(0.85);
+                    opacity: 0.4;
+                }
+                70% {
+                    transform: translateX(75px) translateY(8px) scale(0.9);
+                    opacity: 0.5;
+                }
+                75% {
+                    transform: translateX(63px) translateY(5px) scale(0.95);
+                    opacity: 0.6;
+                }
+                80% {
+                    transform: translateX(55px) translateY(3px) scale(1);
+                    opacity: 0.7;
+                }
+                85% {
+                    transform: translateX(45px) translateY(0px) scale(1.05);
+                    opacity: 0.8;
+                }
+                90% {
+                    transform: translateX(35px) translateY(-2px) scale(1.1);
+                    opacity: 0.9;
+                }
+                95% {
+                    transform: translateX(15px) translateY(-5px) scale(1.05);
+                    opacity: 0.95;
+                }
+                100% {
+                    transform: translateX(0) translateY(0) scale(1);
+                    opacity: 0.8;
+                }
+            }
+
+            @keyframes fusionWave2 {
+                0% {
+                    transform: translateX(0) translateY(0) scale(1);
+                    opacity: 0.8;
+                }
+                5% {
+                    transform: translateX(-6px) translateY(4px) scale(1.05);
+                    opacity: 0.9;
+                }
+                10% {
+                    transform: translateX(-12px) translateY(8px) scale(1.1);
+                    opacity: 1;
+                }
+                15% {
+                    transform: translateX(-18px) translateY(12px) scale(1.15);
+                    opacity: 1;
+                }
+                20% {
+                    transform: translateX(-28px) translateY(18px) scale(1.2);
+                    opacity: 1;
+                }
+                25% {
+                    transform: translateX(-36px) translateY(21px) scale(1.18);
+                    opacity: 0.95;
+                }
+                30% {
+                    transform: translateX(-48px) translateY(25px) scale(1.1);
+                    opacity: 0.9;
+                }
+                35% {
+                    transform: translateX(-56px) translateY(26px) scale(1.05);
+                    opacity: 0.8;
+                }
+                40% {
+                    transform: translateX(-68px) translateY(28px) scale(1);
+                    opacity: 0.7;
+                }
+                45% {
+                    transform: translateX(-73px) translateY(29px) scale(0.9);
+                    opacity: 0.5;
+                }
+                50% {
+                    transform: translateX(-78px) translateY(30px) scale(0.8);
+                    opacity: 0.3;
+                }
+                55% {
+                    transform: translateX(-78px) translateY(30px) scale(0.8);
+                    opacity: 0.3;
+                }
+                60% {
+                    transform: translateX(-78px) translateY(30px) scale(0.8);
+                    opacity: 0.3;
+                }
+                65% {
+                    transform: translateX(-73px) translateY(29px) scale(0.85);
+                    opacity: 0.4;
+                }
+                70% {
+                    transform: translateX(-68px) translateY(28px) scale(0.9);
+                    opacity: 0.5;
+                }
+                75% {
+                    transform: translateX(-56px) translateY(26px) scale(0.95);
+                    opacity: 0.6;
+                }
+                80% {
+                    transform: translateX(-48px) translateY(25px) scale(1);
+                    opacity: 0.7;
+                }
+                85% {
+                    transform: translateX(-36px) translateY(21px) scale(1.05);
+                    opacity: 0.8;
+                }
+                90% {
+                    transform: translateX(-28px) translateY(18px) scale(1.1);
+                    opacity: 0.9;
+                }
+                95% {
+                    transform: translateX(-12px) translateY(8px) scale(1.05);
+                    opacity: 0.95;
+                }
+                100% {
+                    transform: translateX(0) translateY(0) scale(1);
+                    opacity: 0.8;
+                }
+            }
+
+            @keyframes fusionCore {
+                0% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+                10% {
+                    transform: scale(0.2);
+                    opacity: 0.1;
+                }
+                15% {
+                    transform: scale(0.5);
+                    opacity: 0.3;
+                }
+                20% {
+                    transform: scale(0.7);
+                    opacity: 0.5;
+                }
+                25% {
+                    transform: scale(0.9);
+                    opacity: 0.6;
+                }
+                30% {
+                    transform: scale(1);
+                    opacity: 0.7;
+                }
+                35% {
+                    transform: scale(1.2);
+                    opacity: 0.8;
+                    box-shadow: 0 0 25px #3b82f6, 0 0 50px rgba(59, 130, 246, 0.5);
+                }
+                40% {
+                    transform: scale(1.4);
+                    opacity: 0.9;
+                    box-shadow: 0 0 28px #3b82f6, 0 0 55px rgba(59, 130, 246, 0.6);
+                }
+                45% {
+                    transform: scale(1.5);
+                    opacity: 1;
+                    box-shadow: 0 0 30px #3b82f6, 0 0 60px rgba(59, 130, 246, 0.8);
+                }
+                50% {
+                    transform: scale(1.7);
+                    opacity: 1;
+                    box-shadow: 0 0 35px #3b82f6, 0 0 70px rgba(59, 130, 246, 0.9);
+                }
+                55% {
+                    transform: scale(1.8);
+                    opacity: 1;
+                    box-shadow: 0 0 38px #3b82f6, 0 0 75px rgba(59, 130, 246, 0.95);
+                }
+                60% {
+                    transform: scale(2);
+                    opacity: 1;
+                    box-shadow: 0 0 40px #3b82f6, 0 0 80px rgba(59, 130, 246, 1);
+                }
+                65% {
+                    transform: scale(1.9);
+                    opacity: 0.95;
+                    box-shadow: 0 0 38px #3b82f6, 0 0 75px rgba(59, 130, 246, 0.9);
+                }
+                70% {
+                    transform: scale(1.8);
+                    opacity: 0.9;
+                    box-shadow: 0 0 35px #3b82f6, 0 0 70px rgba(59, 130, 246, 0.8);
+                }
+                75% {
+                    transform: scale(1.8);
+                    opacity: 0.9;
+                    box-shadow: 0 0 35px #3b82f6, 0 0 70px rgba(59, 130, 246, 0.7);
+                }
+                80% {
+                    transform: scale(1.6);
+                    opacity: 0.8;
+                    box-shadow: 0 0 30px #3b82f6, 0 0 60px rgba(59, 130, 246, 0.6);
+                }
+                85% {
+                    transform: scale(1.4);
+                    opacity: 0.7;
+                    box-shadow: 0 0 28px #3b82f6, 0 0 55px rgba(59, 130, 246, 0.5);
+                }
+                90% {
+                    transform: scale(1.2);
+                    opacity: 0.6;
+                    box-shadow: 0 0 25px #3b82f6, 0 0 50px rgba(59, 130, 246, 0.4);
+                }
+                95% {
+                    transform: scale(1);
+                    opacity: 0.4;
+                    box-shadow: 0 0 20px #3b82f6, 0 0 40px rgba(59, 130, 246, 0.3);
+                }
+                100% {
+                    transform: scale(0.8);
+                    opacity: 0.2;
+                    box-shadow: 0 0 15px #3b82f6, 0 0 30px rgba(59, 130, 246, 0.2);
+                }
+            }
         `;
         document.head.appendChild(style);
     }
@@ -147,6 +492,7 @@ class NuclearParticleEffect {
         
         this.createFloatingParticles(container);
         this.createUraniumAtom(container);
+        this.createFusionAnimation(container);
         document.body.insertBefore(container, document.body.firstChild);
     }
 
@@ -214,6 +560,36 @@ class NuclearParticleEffect {
         }
         
         container.appendChild(atom);
+    }
+
+    createFusionAnimation(container) {
+        const fusionContainer = document.createElement('div');
+        fusionContainer.className = 'fusion-container';
+
+        // Create multiple fusion particles
+        const particleA = document.createElement('div');
+        particleA.className = 'fusion-particle fusion-particle-a';
+
+        const particleB = document.createElement('div');
+        particleB.className = 'fusion-particle fusion-particle-b';
+
+        const particleC = document.createElement('div');
+        particleC.className = 'fusion-particle fusion-particle-c';
+
+        const particleD = document.createElement('div');
+        particleD.className = 'fusion-particle fusion-particle-d';
+
+        // Create fusion core that builds mass
+        const fusionCore = document.createElement('div');
+        fusionCore.className = 'fusion-core';
+
+        fusionContainer.appendChild(particleA);
+        fusionContainer.appendChild(particleB);
+        fusionContainer.appendChild(particleC);
+        fusionContainer.appendChild(particleD);
+        fusionContainer.appendChild(fusionCore);
+
+        container.appendChild(fusionContainer);
     }
 
     startRotation() {
