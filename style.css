@@ -46,6 +46,14 @@
     color: var(--accent);
   }
 
+  .nav-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+    margin-left: -6rem;
+    border-radius: 4px;
+  }
+
   /* push logo further left, away from nav links */
   .logo {
     margin-right: 4.5rem;
